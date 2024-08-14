@@ -13,7 +13,6 @@ import p2.utils.DAOs.SalesmanDAO;
 import p2.utils.Models.Salesman;
 
 
-
 @WebServlet("/salesman")
 public class SalesmanServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -108,3 +107,4 @@ public class SalesmanServlet extends HttpServlet {
         salesmanDAO.deleteSalesman(id);
         response.sendRedirect("salesman");
     }}
+//Pedro H Perpétuo & Igor Benites

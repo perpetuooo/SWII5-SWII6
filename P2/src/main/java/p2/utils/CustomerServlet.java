@@ -113,3 +113,4 @@ public class CustomerServlet extends HttpServlet {
         response.sendRedirect("customer");
     }
 }
+//Pedro H Perpétuo & Igor Benites
