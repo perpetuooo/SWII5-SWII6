@@ -1,0 +1,62 @@
+﻿@model TP03.Models.Produto
+
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2 class="mb-0">Criar Produto</h2>
+                </div>
+                <div class="card-body">
+                    @if (Model == null)
+                    {
+                        <div class="alert alert-warning text-center" role="alert">
+                            O modelo de produto não foi passado corretamente.
+                        </div>
+                    }
+                    else
+                    {
+                        <form method="post" asp-action="Create" id="produtoForm">
+                            <div class="form-group">
+                                <label for="Nome" class="font-weight-bold">Nome</label>
+                                <input type="text" class="form-control" id="Nome" name="Nome" value="@Model.Nome" placeholder="Nome do Produto" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="Preco" class="font-weight-bold">Preço</label>
+                                <input type="number" class="form-control" id="Preco" name="Preco" value="@Model.Preco" placeholder="Preço do Produto" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="Quantidade" class="font-weight-bold">Quantidade</label>
+                                <input type="number" class="form-control" id="Quantidade" name="Quantidade" value="@Model.Quantidade" placeholder="Quantidade em Estoque" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="Descricao" class="font-weight-bold">Descrição</label>
+                                <textarea class="form-control" id="Descricao" name="Descricao" rows="3" placeholder="Descrição do Produto">@Model.Descricao</textarea>
+                            </div>
+                            <div class="d-flex justify-content-between mt-4">
+                                <button type="submit" class="btn btn-success btn-lg">
+                                    <i class="fas fa-save"></i> Salvar
+                                </button>
+                                <a href="@Url.Action("Index", "Produto")" class="btn btn-secondary btn-lg">
+                                    <i class="fas fa-arrow-left"></i> Voltar
+                                </a>
+                            </div>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.validate.unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#produtoForm").validate();
+        });
+    </script>
+}
+<!-- Pedro H Perpétuo CB3021688 & Igor Benites CB3021734 -->

@@ -1,0 +1,24 @@
+﻿@model TP03.Models.Produto
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4 text-primary">Detalhes do Produto</h2>
+    <div class="card shadow-lg border-0">
+        <div class="card-body">
+            <h3 class="card-title text-dark font-weight-bold">Produto: @Model.Nome</h3>
+            <hr />
+            <p><span class="font-weight-bold">ID:</span> <span class="text-muted">@Model.ID</span></p>
+            <p><span class="font-weight-bold">Preço:</span> <span class="text-success">@Model.Preco.ToString("C2")</span></p>
+            <p><span class="font-weight-bold">Quantidade:</span> <span class="text-primary">@Model.Quantidade</span></p>
+            <p><span class="font-weight-bold">Descrição:</span> <span class="text-muted">@Model.Descricao</span></p>
+            <div class="mt-4 d-flex gap-2">
+                <a href="@Url.Action("Edit", new { id = Model.ID })" class="btn btn-warning btn-lg text-white">
+                    <i class="fas fa-edit"></i> Editar
+                </a>
+                <a href="@Url.Action("Delete", new { id = Model.ID })" class="btn btn-danger btn-lg text-white" onclick="return confirm('Tem certeza que deseja excluir este produto?')">
+                    <i class="fas fa-trash-alt"></i> Excluir
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pedro H Perpétuo CB3021688 & Igor Benites CB3021734 -->

@@ -1,0 +1,28 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.btn-warning, .btn-danger {
+    font-size: 0.9rem;
+}
+
+footer {
+    margin-top: 50px;
+}
