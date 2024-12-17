@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API de Livros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>API de Livros</h1>
+
+        <div class="form-container">
+            <h2 id="formTitle">Adicionar Livro</h2>
+            <form id="addBookForm">
+                <input type="hidden" id="bookId" />
+                <label>
+                    Título:
+                    <input type="text" id="title" placeholder="Título do livro" required />
+                </label>
+                <label>
+                    Autor:
+                    <input type="text" id="author" placeholder="Nome do autor" required />
+                </label>
+                <label>
+                    Ano:
+                    <input type="number" id="year" placeholder="Ano de publicação" />
+                </label>
+                <label>
+                    ISBN (opcional):
+                    <input type="text" id="isbn" placeholder="Deixe em branco para gerar automaticamente" />
+                </label>
+                <button type="submit" class="btn-add">Adicionar Livro</button>
+            </form>
+        </div>
+
+        <div class="books-container">
+            <h2>Livros Disponíveis</h2>
+            <div id="booksList"></div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
