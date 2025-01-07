@@ -1,0 +1,38 @@
+﻿@model WebApp.Models.Produto
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Excluir Produto";
+}
+
+<div class="card border-0">
+    <div class="card-body">
+        <h2 class="mb-4">Excluir Produto</h2>
+        <div class="alert alert-warning mb-4">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            Tem certeza de que deseja excluir este produto?
+        </div>
+        <div class="mb-4">
+            <dl class="row">
+                <dt class="col-sm-3">Nome:</dt>
+                <dd class="col-sm-9">@Model.Nome</dd>
+
+                <dt class="col-sm-3">Preço:</dt>
+                <dd class="col-sm-9">@Model.Preco.ToString("C")</dd>
+
+                <dt class="col-sm-3">Status:</dt>
+                <dd class="col-sm-9">
+                    <span class="badge @(Model.Status ? "bg-success" : "bg-danger")">
+                        @(Model.Status ? "Ativo" : "Inativo")
+                    </span>
+                </dd>
+            </dl>
+        </div>
+        <form action="@Url.Action("Delete")" method="post">
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-danger">Excluir</button>
+                <a href="@Url.Action("Index")" class="btn btn-outline-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
